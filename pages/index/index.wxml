@@ -1,0 +1,54 @@
+<view class="bg-img bg-mask padding-tb-xl" style="background-image: url('https://albedo-theme.com/wp-content/uploads/2016/08/pexels-photo-26180.jpg')">
+  <view class='padding-xl text-white'>
+    <view class='padding-xs text-xl'>
+      我和春天有个约会
+    </view>
+    <view class='padding-xs'>
+      I Have a Date with Spring
+    </view>
+  </view>
+</view>  
+
+<view wx:for="{{list}}" wx:key="{{item}}">
+  <view class="cu-card case {{isCard?'no-card':''}}">
+  <view wx:for="{{item}}" wx:key wx:for-item="picture_item" class="cu-item shadow">
+    <view class='image'>
+      <image src="{{picture_item}}" mode="widthFix"></image>
+      <view class="cu-tag bg-blue">福利</view>
+      <view class='cu-bar bg-shadeBottom'>街头小仙女</view>
+    </view>
+      <view class='padding-sm flex flex-wrap'>
+      <view class="padding-xs" >
+        <view>街头小仙女，长筒靴搭配格子外套</view>
+      </view>
+    </view>
+
+    <view class='padding-sm flex flex-wrap'>
+      <view class="padding-xs" >
+        <view class='cu-tag bg-yellow'>#街拍</view>
+      </view>
+    </view>
+  </view>
+</view>
+</view>
+
+    
+    <!-- <view class="swiper">
+      <swiper
+  indicator-dots="{{true}}"
+  autoplay="{{true}}"
+  interval="3000"
+  duration="500"
+  circular="{{true}}"
+>
+        <block wx:for="{{recommendList}}" wx:key="{{index}}" >
+          <swiper-item>
+            <view class="swiper_image">
+             <image src="{{item}}" />
+            </view>
+           
+          </swiper-item>
+        </block>
+      </swiper>
+    </view> -->
+

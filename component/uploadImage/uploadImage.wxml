@@ -1,0 +1,35 @@
+<view class="cu-modal {{showPost ?'show':''}}">
+  <view class="cu-dialog">
+    <view class="bg-img" style="background-image: url({{imageUrl}});height:200px;" hidden='{{!imageUrl}}' bindtap='addImage'>
+      <view class="cu-bar justify-end text-white">
+        <view class='action' bindtap='hideModal'>
+          <text class='icon-close ' ></text>
+        </view>
+      </view>
+    </view>
+
+  <view class="cu-form-group margin-top" hidden='{{imageUrl}}'>
+    <view class="grid col-3 grid-square flex-sub">
+      <view class="padding-xs bg-img" style="background-image:url(https://image.weilanwl.com/img/square-1.jpg);">
+      </view>
+      <view class="padding-xs bg-img" style="background-image:url(https://image.weilanwl.com/img/square-2.jpg);">
+        <view class="cu-tag bg-red">
+          <text class='icon-close'></text>
+        </view>
+      </view>
+      <view class="padding-xs solids">
+        <text class='icon-cameraadd' bindtap='addImage'></text>
+      </view>
+    </view>
+  </view>
+
+
+    <view class="cu-form-group top" wx:hide="{{modalName==null}}">
+    
+    <textarea value="{{description}}" bindinput='edit' placeholder="添加点儿描述吧" maxlength="140" placeholder-class='placeholder'></textarea>
+    </view>
+    <view class="cu-bar bg-white">
+      <view class='action margin-0 flex-sub  solid-left' bindtap='post'>发布</view>
+    </view>
+  </view>
+</view>

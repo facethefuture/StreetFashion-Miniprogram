@@ -1,13 +1,14 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/me/me"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "custom": true,
@@ -19,8 +20,12 @@
         "pagePath": "pages/index/index",
         "text": "组件"
       },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "组件"
+      },
         {
-          "pagePath": "pages/logs/logs",
+          "pagePath": "pages/me/me",
           "text": "组件"
         }
     ]

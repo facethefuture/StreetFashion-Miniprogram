@@ -9,17 +9,17 @@
   </view>
 </view>  
 
-<view wx:for="{{list}}" wx:key="{{item}}">
+<view wx:for="{{list}}" wx:key="{{index}}">
   <view class="cu-card case {{isCard?'no-card':''}}">
-  <view wx:for="{{item}}" wx:key wx:for-item="picture_item" class="cu-item shadow">
+  <view wx:for="{{item}}" wx:for-item="items" wx:key="{{index}}" class="cu-item shadow">
     <view class='image'>
-      <image src="{{picture_item}}" mode="widthFix"></image>
+      <image src="{{'http://localhost/' + items.coverImage}}" mode="widthFix"></image>
       <view class="cu-tag bg-blue">福利</view>
       <view class='cu-bar bg-shadeBottom'>街头小仙女</view>
     </view>
       <view class='padding-sm flex flex-wrap'>
       <view class="padding-xs" >
-        <view>街头小仙女，长筒靴搭配格子外套</view>
+        <view>{{items.description}}</view>
       </view>
     </view>
 
@@ -51,4 +51,5 @@
         </block>
       </swiper>
     </view> -->
-
+<button bindtap='upload'>上传</button>
+<button bindtap='upload'>上传</button><button bindtap='upload'>上传</button>

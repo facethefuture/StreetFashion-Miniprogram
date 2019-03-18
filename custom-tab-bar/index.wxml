@@ -1,25 +1,26 @@
 <!--custom-tab-bar/index.wxml-->
-<view class="cu-bar tabbar bg-black">
-    <view class="action text-green">
-      <view class='icon-homefill'></view> 首页
+<view class="cu-bar tabbar bg-white">
+    <view class="action text-gray" bindtap='jump' data-activeIndex="1" style="color:{{ activeIndex === '1' ? '#39b54a' : '#8799a3'}}">
+      <view class='icon-homefill' ></view> 首页
     </view>
-    <view class="action text-gray">
-      <view class='icon-similar'></view> 分类
-    </view>
-    <view class="action text-gray add-action">
-      <button class='cu-btn icon-add bg-green shadow'></button>
+    <!-- <view class="action " bindtap='jump' data-activeIndex="2" style="color:{{ activeIndex === '2' ? '#39b54a' : '#8799a3'}}">
+      <view class='icon-similar' ></view> 分类
+    </view> -->
+    <view class="action text-gray add-action" bindtap='jump' data-activeIndex="3" style="color:{{ activeIndex === '3' ? '#39b54a' : '#8799a3'}}">
+      <button class='cu-btn icon-add bg-green shadow' ></button>
       发布
     </view>
-    <view class="action text-gray">
-      <view class='icon-cart'>
+    <!-- <view class="action text-gray" bindtap='jump' data-activeIndex="4" style="color:{{ activeIndex === '4' ? '#39b54a' : '#8799a3'}}">
+      <view class='icon-cart' >
         <view class='cu-tag badge'>99</view>
       </view>
       购物车
-    </view>
-    <view class="action text-gray">
+    </view> -->
+    <view class="action text-gray" bindtap='jump' data-activeIndex="5" style="color:{{ activeIndex === '5' ? '#39b54a' : '#8799a3'}}">
       <view class='icon-my'>
         <view class='cu-tag badge'></view>
       </view>
       我的
     </view>
   </view>
+  <upload-image showPost="{{showPost}}" bindclose="close"></upload-image>

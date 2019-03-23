@@ -6,8 +6,9 @@ Page({
   data: {
     list: [['/assets/image/vol.101.jpg', '/assets/image/vol.102.jpg', '/assets/image/vol.103.jpg', '/assets/image/vol.104.jpg']],
     currentPage: 1,
-    totalPage: ''
-
+    totalPage: '',
+    description:'',
+    host: app.globalData.host
   },
   //事件处理函数
   onLoad: function () {
@@ -18,14 +19,17 @@ Page({
     console.log("触底了")
     if (this.data.currentPage < this.data.totalPage){
       let page = this.data.currentPage +1
-      this.getList(page)
+      this.getList(page,this.data.description)
     }
   },
-  getList(page=1){
+  getList(page=1,description){
+    wx.showLoading({
+      title: '加载中'
+    })
     let _this = this
     wx.request({
       url: 'http://localhost/hotRecommend',
-      data: { page: page },
+      data: description ? {page,description} : { page: page},
       method: 'GET',
       success: function (res) {
         console.log(res)
@@ -36,25 +40,30 @@ Page({
         })
         // _this.list = res.data.dataList
         console.log(_this.data.list)
+        wx.hideLoading()
+      },
+      fail: function(res){
+        wx.hideLoading()
       }
     })
   },
-  upload(){
-    wx.chooseImage({
-      success(res) {
-        const tempFilePaths = res.tempFilePaths
-        console.log(tempFilePaths)
-        wx.uploadFile({
-          url: 'http://localhost/upload', // 仅为示例，非真实的接口地址
-          filePath: tempFilePaths[0],
-          name: 'image',
-      
-          success(res) {
-            const data = res.data
-            // do something
-          }
-        })
-      }
+  seachPicture(event){
+    console.log(event)
+    this.setData({
+      currentPage: 1,
+      list: [],
+      description: this.data.description
+    })
+    if (this.data.description !== ''){
+      this.getList(1, this.data.description)
+    } else{
+      this.getList()
+    }
+    
+  },
+  edit(event){
+    this.setData({
+      description: event.detail.value
     })
   }
 })

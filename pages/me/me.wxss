@@ -1,1 +1,31 @@
-/* pages/me/me.wxss */
+.container>view{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+}
+.container>view>view{
+  width:45%;
+
+  height: 100px;
+
+}
+.container>view:nth-child(2n){
+  display: flex;
+  justify-content: flex-end;
+}
+.oversee{
+  display: inline-block;
+ transform: rotate(180deg);
+}
+.icon-qrcode{
+  font-size: 30px;
+}
+.cu-item{
+  display: inline-flex;
+  align-items: center;
+}
+.qrcode_width{
+  width: fit-content;
+}

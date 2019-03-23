@@ -1,14 +1,15 @@
 <!--custom-tab-bar/index.wxml-->
+
 <view class="cu-bar tabbar bg-white">
     <view class="action text-gray" bindtap='jump' data-activeIndex="1" style="color:{{ activeIndex === '1' ? '#39b54a' : '#8799a3'}}">
-      <view class='icon-homefill' ></view> 首页
+      <view class='icon-homefill' ></view> 街拍
     </view>
     <!-- <view class="action " bindtap='jump' data-activeIndex="2" style="color:{{ activeIndex === '2' ? '#39b54a' : '#8799a3'}}">
       <view class='icon-similar' ></view> 分类
     </view> -->
     <view class="action text-gray add-action" bindtap='jump' data-activeIndex="3" style="color:{{ activeIndex === '3' ? '#39b54a' : '#8799a3'}}">
       <button class='cu-btn icon-add bg-green shadow' ></button>
-      发布
+      商业合作
     </view>
     <!-- <view class="action text-gray" bindtap='jump' data-activeIndex="4" style="color:{{ activeIndex === '4' ? '#39b54a' : '#8799a3'}}">
       <view class='icon-cart' >
@@ -20,7 +21,7 @@
       <view class='icon-my'>
         <view class='cu-tag badge'></view>
       </view>
-      我的
+      服务
     </view>
   </view>
   <upload-image showPost="{{showPost}}" bindclose="close"></upload-image>

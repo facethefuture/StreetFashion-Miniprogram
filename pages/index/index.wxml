@@ -1,19 +1,18 @@
-<view class="bg-img bg-mask padding-tb-xl" style="background-image: url('https://albedo-theme.com/wp-content/uploads/2016/08/pexels-photo-26180.jpg')">
-  <view class='padding-xl text-white'>
-    <view class='padding-xs text-xl'>
-      我和春天有个约会
-    </view>
-    <view class='padding-xs'>
-      I Have a Date with Spring
-    </view>
+<view class="cu-bar search bg-white">
+  <view class='search-form round'>
+    <text class="icon-search"></text>
+    <input bindconfirm='seachPicture' bindinput='edit' type="text" placeholder="搜索图片" confirm-type="search"></input>
   </view>
-</view>  
+  <view class='action'>
+    <button class='cu-btn bg-green shadow-blur round' bindtap="seachPicture">搜索</button>
+  </view>
+</view>
 
-<view wx:for="{{list}}" wx:key="{{index}}">
+<view wx:for="{{list}}" wx:key="{{index}}" class="margin_bottom">
   <view class="cu-card case {{isCard?'no-card':''}}">
   <view wx:for="{{item}}" wx:for-item="items" wx:key="{{index}}" class="cu-item shadow">
     <view class='image'>
-      <image src="{{'http://localhost/' + items.coverImage}}" mode="widthFix"></image>
+      <image src="{{host + items.coverImage}}" mode="widthFix"></image>
       <view class="cu-tag bg-blue">福利</view>
       <view class='cu-bar bg-shadeBottom'>街头小仙女</view>
     </view>
@@ -51,5 +50,3 @@
         </block>
       </swiper>
     </view> -->
-<button bindtap='upload'>上传</button>
-<button bindtap='upload'>上传</button><button bindtap='upload'>上传</button>

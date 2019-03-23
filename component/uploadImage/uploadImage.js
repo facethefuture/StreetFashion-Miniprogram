@@ -70,7 +70,7 @@ Component({
       }
       
       wx.uploadFile({
-        url: 'http://localhost/upload', // 仅为示例，非真实的接口地址
+        url: 'http://localhost/user/upload', // 仅为示例，非真实的接口地址
         filePath: this.data.imageUrl,
         name: 'image',
         formData:{
@@ -79,6 +79,10 @@ Component({
         success(res) {
           const data = res.data
           // do something
+          wx.showToast({
+            title: '收到你的消息啦',
+            icon: 'success'
+          })
         }
       })
     }

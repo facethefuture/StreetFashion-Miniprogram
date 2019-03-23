@@ -1,3 +1,7 @@
 /**app.wxss**/
 @import "icon.wxss";
 @import "colorui.wxss";
+.margin_bottom{
+margin-bottom:100rpx;
+
+}

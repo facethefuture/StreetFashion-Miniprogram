@@ -1,18 +1,21 @@
 // pages/me/me.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    showQrcodeModule: false,
+    moduleList: [],
+    host: app.globalData.host
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getPhotographyModules()
   },
 
   /**
@@ -28,39 +31,63 @@ Page({
   onShow: function () {
 
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  testSecurity(){
+    wx.request({
+      url: 'http://localhost/login',
+      method: 'POST',
+      data:{
+        username: 'admin',
+        password:'123'
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  formSubmit(e) {
+    const params = e.detail.value
+    console.log(params)
+    wx.request({
+      url: 'http://localhost/login',
+      method: 'POST',
+      data: {
+        ...params
+      },
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        console.log(res)
+      }
+    })
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  getUser(){},
+  showQrcode(){
+    this.setData({
+      showQrcodeModule: true
+    })
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+  hideQrcode() {
+    this.setData({
+      showQrcodeModule: false
+    })
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  getPhotographyModules(){
+    wx.showLoading({
+      title: '加载中'
+    })
+    let _this = this
+    wx.request({
+      url: 'http://localhost/queryPhotographyModule',
+      method: 'GET',
+      success: function(res){
+        console.log(res)
+        _this.setData({
+          moduleList: res.data.dataList
+        })
+        wx.hideLoading()
+      },
+      fail:function(res){
+        console.log(res)
+        wx.hideLoading()
+      }
+    })
   }
 })

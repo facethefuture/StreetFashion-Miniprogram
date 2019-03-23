@@ -1,1 +1,11 @@
 /* component/uploadImage/uploadImage.wxss */
+.close_model{
+  position: absolute;
+  right: 10rpx;
+  top: 10rpx;
+}
+.center{
+  display:flex;
+justify-content:center;
+
+}

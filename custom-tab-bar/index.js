@@ -1,5 +1,4 @@
 // custom-tab-bar/index.js
-const app = getApp()
 Component({
   /**
    * 组件的属性列表
@@ -11,64 +10,44 @@ Component({
 
   },
   lifetimes: {
-    attached() {
-      // 在组件实例进入页面节点树时执行
-      this.setData({
-        activeIndex: app.globalData.activeindex ? app.globalData.activeindex : '1'
-      })
-    },
-    detached() {
-      // 在组件实例被从页面节点树移除时执行
-    },
   },
-
   /**
    * 组件的初始数据
    */
   data: {
-    activeIndex: '1',
-    showPost: false
+    selected: '0',
+    showPost: false,
+    color: '#8799a3',
+    selectedColor: '#39b54a'
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
-    jump(event){
-      switch(event.currentTarget.dataset.activeindex){
-        case '1': wx.switchTab({
-          url: '/pages/index/index',
-        })
-          // app.setData({
-          //   activeIndex: event.currentTarget.dataset.activeindex
-          // })
-          app.globalData.activeindex = '1'
-          // this.setData({
-          //   activeIndex: app.globalData.activeindex
-          // })
-        break;
-        case '5': wx.switchTab({
-          url: '/pages/me/me',
-        })
-        
-          app.globalData.activeindex = '5'
-          // this.setData({
-          //   activeIndex: app.globalData.activeindex
-          // })
-        break;
-        case '3': this.setData({
-          showPost: true
-        })
-        break;
-      }
-      console.log(event)
-      console.log(app.globalData.activeindex)
-
-    },
     close() {
       this.setData({
         showPost: false
       })
+    },
+    switchTab(e) {
+      const data = e.currentTarget.dataset
+      switch(data.index){
+        case '0':
+          wx.switchTab({
+            url: '/pages/index/index',
+          })
+          break
+        case '1': this.setData({
+          showPost: true
+        })
+          break
+        case '2':
+          wx.switchTab({
+            url: '/pages/me/me',
+          })
+          break
+      }
     }
   }
 })

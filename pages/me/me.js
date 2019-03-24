@@ -16,6 +16,7 @@ Page({
    */
   onLoad: function (options) {
     this.getPhotographyModules()
+  
   },
 
   /**
@@ -29,36 +30,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if (typeof this.getTabBar === 'function' &&
+      this.getTabBar()) {
+      this.getTabBar().setData({
+        selected: '2'
+      })
+    }
   },
-  testSecurity(){
-    wx.request({
-      url: 'http://localhost/login',
-      method: 'POST',
-      data:{
-        username: 'admin',
-        password:'123'
-      }
-    })
-  },
-  formSubmit(e) {
-    const params = e.detail.value
-    console.log(params)
-    wx.request({
-      url: 'http://localhost/login',
-      method: 'POST',
-      data: {
-        ...params
-      },
-      header: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      },
-      success: function (res) {
-        console.log(res)
-      }
-    })
-  },
-  getUser(){},
   showQrcode(){
     this.setData({
       showQrcodeModule: true
@@ -75,7 +53,7 @@ Page({
     })
     let _this = this
     wx.request({
-      url: 'http://localhost/queryPhotographyModule',
+      url: `${this.data.host}/queryPhotographyModule`,
       method: 'GET',
       success: function(res){
         console.log(res)

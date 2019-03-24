@@ -1,4 +1,5 @@
 // component/uploadImage/uploadImage.js
+const app = getApp()
 Component({
   /**
    * 组件的属性列表
@@ -18,7 +19,8 @@ Component({
    */
   data: {
     description:'',
-    imageUrl: ''
+    imageUrl: '',
+    host: app.globalData.host
   },
 
   /**
@@ -52,6 +54,7 @@ Component({
       })
     },
     post(){
+      let _this = this
       if (!this.data.imageUrl) {
         wx.showToast({
           title: '先上传照片哦！',
@@ -70,7 +73,7 @@ Component({
       }
       
       wx.uploadFile({
-        url: 'http://localhost/user/upload', // 仅为示例，非真实的接口地址
+        url: `${this.data.host}/upload`, // 仅为示例，非真实的接口地址
         filePath: this.data.imageUrl,
         name: 'image',
         formData:{
@@ -83,6 +86,7 @@ Component({
             title: '收到你的消息啦',
             icon: 'success'
           })
+          _this.hideModal()
         }
       })
     }

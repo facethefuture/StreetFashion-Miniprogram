@@ -20,11 +20,12 @@
     </view>
   </view>
 
-
-    <view class="cu-form-group top" wx:hide="{{modalName==null}}">
     
-    <textarea value="{{description}}" bindinput='edit' placeholder="添加点儿描述吧" maxlength="140" placeholder-class='placeholder'></textarea>
+    <view class="cu-form-group top description_edit" wx:hide="{{modalName==null}}">
+    <view>添加描述</view>
+    <input value="{{description}}" bindinput='edit' maxlength="140" placeholder-class='placeholder'></input>
     </view>
+
     <view class="cu-bar bg-white">
       <view class='action margin-0 flex-sub  solid-left' bindtap='post'>联系我</view>
     </view>

@@ -20,10 +20,6 @@
         "pagePath": "pages/index/index",
         "text": "组件"
       },
-      {
-        "pagePath": "pages/logs/logs",
-        "text": "组件"
-      },
         {
           "pagePath": "pages/me/me",
           "text": "组件"

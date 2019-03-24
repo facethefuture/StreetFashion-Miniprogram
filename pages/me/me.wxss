@@ -29,3 +29,8 @@
 .qrcode_width{
   width: fit-content;
 }
+.module_name{
+  position: absolute;
+  bottom:0px;
+  left:50%;
+}

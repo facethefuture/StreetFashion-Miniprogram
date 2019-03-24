@@ -16,7 +16,7 @@
 <view class="container">
   <view> 
       <view wx:for="{{moduleList}}" wx:key="{{index}}" class="padding-xl radius shadow-blur bg-red margin-top bg-img" style="background-image:url({{host + item.coverImage}});">
-        <view>{{item.name}}</view>
+        <view class="module_name">{{item.name}}</view>
       </view>
       <!-- <view class="padding-xl radius shadow-blur bg-red margin-top bg-img" style="background-image:url(https://image.weilanwl.com/img/square-3.jpg);">
         <view>闺蜜拍</view>

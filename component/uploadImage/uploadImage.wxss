@@ -9,3 +9,26 @@
 justify-content:center;
 
 }
+.description_edit{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+
+}
+.description_edit>view:nth-child(1){
+  font-size: 12px;
+  background-color:#fff;
+  color:#666;
+  width: 100%;
+
+}
+.description_edit>input{
+  border: 1px solid #eee;
+  border-radius: 10px;
+  width: 100%;
+}
+.cu-form-group+.cu-form-group{
+  border-top:0rpx solid #eee;
+}

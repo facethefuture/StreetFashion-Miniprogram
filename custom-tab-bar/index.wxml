@@ -1,23 +1,16 @@
 <!--custom-tab-bar/index.wxml-->
 
 <view class="cu-bar tabbar bg-white">
-    <view class="action text-gray" bindtap='jump' data-activeIndex="1" style="color:{{ activeIndex === '1' ? '#39b54a' : '#8799a3'}}">
+    <view class="action text-gray" bindtap='switchTab' data-index="0" style="color:{{ selected === '0' ? selectedColor : color}}">
       <view class='icon-homefill' ></view> 街拍
     </view>
-    <!-- <view class="action " bindtap='jump' data-activeIndex="2" style="color:{{ activeIndex === '2' ? '#39b54a' : '#8799a3'}}">
-      <view class='icon-similar' ></view> 分类
-    </view> -->
-    <view class="action text-gray add-action" bindtap='jump' data-activeIndex="3" style="color:{{ activeIndex === '3' ? '#39b54a' : '#8799a3'}}">
+  
+    <view class="action text-gray add-action" bindtap='switchTab' data-index="1" style="selected:{{ activeIndex === '1' ? selectedColor : color}}">
       <button class='cu-btn icon-add bg-green shadow' ></button>
       商业合作
     </view>
-    <!-- <view class="action text-gray" bindtap='jump' data-activeIndex="4" style="color:{{ activeIndex === '4' ? '#39b54a' : '#8799a3'}}">
-      <view class='icon-cart' >
-        <view class='cu-tag badge'>99</view>
-      </view>
-      购物车
-    </view> -->
-    <view class="action text-gray" bindtap='jump' data-activeIndex="5" style="color:{{ activeIndex === '5' ? '#39b54a' : '#8799a3'}}">
+  
+    <view class="action text-gray" bindtap='switchTab' data-index="2" style="color:{{ selected === '2' ? selectedColor : color}}">
       <view class='icon-my'>
         <view class='cu-tag badge'></view>
       </view>

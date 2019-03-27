@@ -2,7 +2,7 @@
     <view wx:for="1" wx:key class="cu-item shadow single-snap">
       <view class="cu-list menu menu-avatar">
         <view class="cu-item">
-          <view class="cu-avatar round lg" style="background-image:url({{host + subItem.coverImage}});"></view>
+          <view class="cu-avatar round lg" style="background-image:url(https://image.weilanwl.com/img/square-4.jpg);"></view>
           <view class='content flex-sub'>
             <view>萌萌哒的管理员</view>
             <view class='text-gray text-sm flex justify-between'>

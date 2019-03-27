@@ -56,11 +56,13 @@
       <view class='text-content'>
         {{subItem.description}}
       </view>
-      <view class='text-gray text-sm text-right padding'>
+      <view class='text-gray text-sm text-right padding tags_date_box'>
         <!-- <text class="icon-attentionfill"></text> 10
         <text class="icon-appreciatefill"></text> 20
         <text class="icon-messagefill"></text> 30 -->
-        {{subItem.createdTime}}
+        <text>作者：萌萌哒的管理员</text>
+        <text>{{subItem.createdTime}}</text>
+        
       </view>
 
     </view>

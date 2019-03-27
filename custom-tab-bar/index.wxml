@@ -2,7 +2,7 @@
 
 <view class="cu-bar tabbar bg-white">
     <view class="action text-gray" bindtap='switchTab' data-index="0" style="color:{{ selected === '0' ? selectedColor : color}}">
-      <view class='icon-homefill' ></view> 街拍
+      <view class='icon-homefill' ></view> 发现
     </view>
   
     <view class="action text-gray add-action" bindtap='switchTab' data-index="1" style="selected:{{ activeIndex === '1' ? selectedColor : color}}">

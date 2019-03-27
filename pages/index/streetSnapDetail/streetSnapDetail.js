@@ -27,7 +27,7 @@ Page({
       success: function(res) {
         console.log(res)
         res.data.createdTime = _this.dateFormat(res.data.createdTime)
-        res.data.tags = JSON.parse(res.data.tags)
+        res.data.tags = res.data.tags ? JSON.parse(res.data.tags) : []
         _this.setData({
           good: res.data
         })

@@ -98,5 +98,11 @@ Page({
     } else {
       return ''
     }
+  },
+  jump(event){
+    console.log(event)
+    wx.navigateTo({
+      url: `/pages/index/streetSnapDetail/streetSnapDetail?id=${event.currentTarget.dataset.id}`,
+    })
   }
 })

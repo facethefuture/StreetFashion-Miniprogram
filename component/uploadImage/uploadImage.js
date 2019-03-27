@@ -77,7 +77,7 @@ Component({
         filePath: this.data.imageUrl,
         name: 'image',
         formData:{
-          description: this.data.description
+          description: JSON.stringify(new Array(1,2,3,4))
         },
         success(res) {
           const data = res.data

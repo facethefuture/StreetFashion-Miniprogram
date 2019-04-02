@@ -1,0 +1,16 @@
+.single-snap{
+  margin: 30rpx 0!important;
+  border-radius: 0!important;
+}
+.image>view{
+  background-position:0 20%;
+  /* height: 320rpx; */
+  overflow: hidden;
+  border-radius: 0!important;
+}
+.image{
+  padding: 0;
+}
+.image image{
+  width: 100%;
+}

@@ -7,32 +7,36 @@
       I Have a Date with Spring
     </view>
   </view>
-</view>  
-<view class='text-black padding-xs text-xl'>我们的服务 <view class="cu-item oversee">
+</view> 
+<!-- <view class='text-black padding-xs text-xl'>我们的服务 <view class="cu-item oversee">
     <text class='icon-usefullfill lg text-gray'></text>
     <text>{{item.name}}</text>
   </view>
-</view>
-<view class="container">
+</view> -->
+<!-- <view class="container">
   <view> 
       <view wx:for="{{moduleList}}" wx:key="{{index}}" class="padding-xl radius shadow-blur bg-red margin-top bg-img" style="background-image:url({{host + item.coverImage}});">
         <view class="module_name">{{item.name}}</view>
       </view>
-      <!-- <view class="padding-xl radius shadow-blur bg-red margin-top bg-img" style="background-image:url(https://image.weilanwl.com/img/square-3.jpg);">
-        <view>闺蜜拍</view>
-      </view>
-       <view class="padding-xl radius shadow-blur bg-red margin-top bg-img" style="background-image:url(https://image.weilanwl.com/img/square-3.jpg);">
-        <view>旅行拍</view>
-      </view>
-        <view class="padding-xl radius shadow-blur bg-red margin-top bg-img" style="background-image:url(https://image.weilanwl.com/img/square-3.jpg);">
-        <view>私房拍</view>
-      </view>
-       <view class="padding-xl radius shadow-blur bg-red margin-top bg-img" style="background-image:url(https://image.weilanwl.com/img/square-3.jpg);">
-        <view>宠物拍</view>
-      </view> -->
   </view> 
+</view> -->
+<!-- <view class="photograth-box">
+    <view class="view">
+      <view class="item" wx:for="{{dataList}}" we:key="{{index}}"  bindtap="jump" data-id="{{item.id}}">
+      <image src="{{host + item.coverImage}}" mode="widthFix"></image>
+      </view>
+    </view>
+    <view class="view">
+      <view class="item" wx:for="{{dataList}}" we:key="{{index}}" bindtap="jump" data-id="{{item.id}}">
+      <image src="{{host + item.coverImage}}" mode="widthFix"></image>
+      </view>
+    </view>
+</view> -->
+<view class="masonry">
+  <view class="column"><image src="{{host + item.coverImage}}" mode="widthFix"  wx:for="{{columnLeft}}" we:key="{{index}}"  bindload="loadLeft" bindtap="jump" data-id="{{item.id}}"></image></view>
+    <view class="column"><image src="{{host + item.coverImage}}" mode="widthFix"  wx:for="{{columnRight}}" we:key="{{index}}" bindload="loadRight" bindtap="jump" data-id="{{item.id}}"></image></view>
 </view>
-<view class='padding margin_bottom'>
+<!-- <view class='padding margin_bottom'>
   <view class='text-left padding'>你负责美，我负责拍</view>
   <view class='text-center padding'>记录你的美好时刻</view>
   <view class='text-right padding'>游乐上海，想拍节拍</view>
@@ -47,9 +51,9 @@
   </view>
     </view>
   </view>
-</view>
+</view> -->
 
-<view class="cu-modal {{showQrcodeModule ? 'show':''}}">
+<!-- <view class="cu-modal {{showQrcodeModule ? 'show':''}}">
   <view class="cu-dialog qrcode_width">
     <view class="bg-img" style="background-image: url({{host + '/assets/image/commons/weixinqrcode.png'}});height:200px;width:200px;">
       <view class="cu-bar justify-end text-white">
@@ -62,6 +66,6 @@
       <view class='action margin-0 flex-sub  solid-left' bindtap='hideQrcode'>关闭</view>
     </view>
   </view>
-</view>
+</view> -->
 
  

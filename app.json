@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/me/me",
-    "pages/index/streetSnapDetail/streetSnapDetail"
+    "pages/index/streetSnapDetail/streetSnapDetail",
+    "pages/me/photographyDetail/photographyDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

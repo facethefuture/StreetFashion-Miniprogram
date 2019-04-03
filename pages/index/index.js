@@ -39,7 +39,7 @@ Page({
     let _this = this
     wx.request({
       url: `${this.data.host}/hotRecommend`,
-      data: description ? {page,description} : { page: page},
+      data: description ? { page, description: encodeURI(this.data.description)} : { page: page},
       method: 'GET',
       success: function (res) {
         console.log(res)

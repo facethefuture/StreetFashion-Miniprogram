@@ -15,7 +15,11 @@ Page({
     description: '',
     dataList: [],
     columnLeft: [],
-    columnRight: []
+    columnRight: [],
+    leftHeight: [],
+    rightHeight: [],
+    leftCount: 0,
+    rightCount: 0
   },
 
   /**
@@ -177,8 +181,111 @@ Page({
   },
   loadLeft(e){
     console.log(e)
+    let arr = this.data.leftHeight
+    let obj = {
+      id: e.target.dataset.id,
+      height: e.detail.height,
+      width: e.detail.width
+    }
+    for (let item of this.data.columnLeft) {
+      if (item.id === e.target.dataset.id) {
+        item.height = e.detail.height * (180 / e.detail.width)
+        item.width = 180
+        break
+      }
+    }
+    let num = this.data.leftCount
+    this.setData({
+      [`leftHeight[${this.data.leftHeight.length}]`]: obj,
+      leftCount: num + 1
+    })
+    console.log(this.data.leftHeight)
+    this.validateHeight()
+
   },
   loadRight(e){
     console.log(e)
+    // let arr = this.data.leftHeight
+    let obj = {
+      id: e.target.dataset.id,
+      height: e.detail.height,
+      width: e.detail.width
+    }
+    // this.data.columnRight.forEach((item) => {
+    //   if (item.id === e.target.dataset.id) {
+    //     item.width = e.detail.width
+    //     item.height = e.detail.height
+    //   }
+    // })
+    for (let item of this.data.columnRight) {
+      if (item.id === e.target.dataset.id){
+        item.height = e.detail.height * (180 / e.detail.width)
+        item.width = 180
+        break
+      }
+    }
+    let num = this.data.rightCount
+    this.setData({
+      [`rightHeight[${this.data.rightHeight.length}]`]: obj,
+      rightCount: num + 1
+    })
+    console.log(this.data.rightHeight)
+    console.log(this.data.columnRight)
+    this.validateHeight()
+
+  },
+  validateHeight(left,right){
+    console.log(JSON.parse(JSON.stringify(this.data.columnLeft)).length)
+    console.log(JSON.parse(JSON.stringify(this.data.columnRight)).length)
+    console.log(this.data.leftCount)
+    console.log(this.data.rightCount)
+    if (this.data.leftCount === JSON.parse(JSON.stringify(this.data.columnLeft)).length && this.data.rightCount === JSON.parse(JSON.stringify(this.data.columnRight)).length){
+      let leftHeightCount = 0
+      let rightHeightCount = 0
+      for(let item of this.data.columnLeft){
+        console.log(JSON.stringify(item))
+        leftHeightCount += item.height
+      }
+      for(let item of this.data.columnRight){
+        rightHeightCount += item.height
+      }
+      console.log(leftHeightCount, rightHeightCount)
+      console.log(this.data.columnLeft[-1])
+      let leftLength = this.data.columnLeft.length
+      let rightLength = this.data.columnRight.length
+      if (leftHeightCount - rightHeightCount > this.data.columnLeft[leftLength -1].height) {
+        let newArray = [...this.data.columnLeft]
+        let lastItem = newArray.pop()
+        this.setData({
+          columnLeft: newArray,
+          [`columnRight[${rightLength}]`]: lastItem,
+          leftCount: this.data.leftCount - 1
+        })
+        console.log('左换到右')
+      } else if (rightHeightCount - leftHeightCount > this.data.columnRight[rightLength - 1].height){
+        console.log(this.data.columnLeft)
+        console.log(this.data.columnLeft.length)
+        let newArray = [...this.data.columnRight]
+        console.log(JSON.stringify(newArray))
+        let lastItem = newArray.pop()
+        console.log(JSON.stringify(newArray))
+        let numL = this.data.leftCount
+        let numR = this.data.rightCount
+        this.setData({
+          columnRight: newArray,
+          [`columnLeft[${leftLength}]`]: lastItem,
+          rightCount: numR -1
+        })
+        console.log('右换到左')
+      }
+      console.log('交换照片完毕')
+      console.log(this.data.columnLeft)
+      console.log(this.data.columnRight)
+      console.log(this.data.leftCount)
+      console.log(this.data.rightCount)
+      // this.validateHeight()
+
+    }
   }
+
 })

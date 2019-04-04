@@ -98,8 +98,19 @@ Page({
       method: 'GET',
       success: function (res) {
         console.log(res)
-        res.data.dataList.forEach((item) => {
+        res.data.dataList.forEach((item,index) => {
           item.createdTime = _this.dateFormat(item.createdTime)
+          if (index % 2 === 0) {
+            let length = _this.data.columnLeft.length
+            _this.setData({
+              [`columnLeft[${length}]`]: item
+            })
+          } else {
+            let length = _this.data.columnRight.length
+            _this.setData({
+              [`columnRight[${length}]`]: item
+            })
+          }
         })
         _this.setData({
           [`list[${res.data.currentPage - 1}]`]: res.data.dataList,
@@ -107,30 +118,30 @@ Page({
           'totalPage': res.data.totalPage
         })
         // _this.list = res.data.dataList
-       let arr = []
-        let column1 = []
-         let column2 = []
-       _this.data.list.forEach((item, index) => {
+      //  let arr = []
+      //   let column1 = []
+      //    let column2 = []
+      //  _this.data.list.forEach((item, index) => {
         
-         item.forEach((item2, index2) => {
-           if (index2 % 2 === 0) {
-              column1.push(item2)
-           } else {
-             column2.push(item2)
-           }
-            arr.push(item2)
-         })
+      //    item.forEach((item2, index2) => {
+      //      if (index2 % 2 === 0) {
+      //         column1.push(item2)
+      //      } else {
+      //        column2.push(item2)
+      //      }
+      //       arr.push(item2)
+      //    })
   
-       })
+      //  })
     
-        _this.setData({
-          dataList: arr,
-          columnLeft: column1,
-          columnRight: column2
-        })
+        // _this.setData({
+        //   dataList: arr,
+        //   columnLeft: column1,
+        //   columnRight: column2
+        // })
         console.log(_this.data.columnLeft)
         console.log(_this.data.columnRight)
-        console.log(_this.data.dataList)
+        // console.log(_this.data.dataList)
         wx.hideLoading()
       },
       fail: function (res) {

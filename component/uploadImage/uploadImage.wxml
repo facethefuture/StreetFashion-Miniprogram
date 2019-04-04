@@ -27,7 +27,7 @@
     </view>
 
     <view class="cu-bar bg-white">
-      <view class='action margin-0 flex-sub  solid-left' bindtap='post'>联系我</view>
+      <view class='action margin-0 flex-sub  solid-left' bindtap='post' data-type="1">联系我1</view><view class='action margin-0 flex-sub  solid-left' bindtap='post' data-type="2">联系我2</view>
     </view>
   </view>
 </view>

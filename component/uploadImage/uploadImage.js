@@ -53,7 +53,8 @@ Component({
         }
       })
     },
-    post(){
+    post(event){
+      console.log(event)
       let _this = this
       if (!this.data.imageUrl) {
         wx.showToast({
@@ -77,7 +78,8 @@ Component({
         filePath: this.data.imageUrl,
         name: 'image',
         formData:{
-          description: this.data.description
+          description: this.data.description,
+          type: event.currentTarget.dataset.type
         },
         success(res) {
           const data = res.data

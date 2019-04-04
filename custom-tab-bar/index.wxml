@@ -2,19 +2,19 @@
 
 <view class="cu-bar tabbar bg-white">
     <view class="action text-gray" bindtap='switchTab' data-index="0" style="color:{{ selected === '0' ? selectedColor : color}}">
-      <view class='icon-homefill' ></view> 街拍
+      <view class='icon-homefill' ></view> 发现
     </view>
   
     <view class="action text-gray add-action" bindtap='switchTab' data-index="1" style="selected:{{ activeIndex === '1' ? selectedColor : color}}">
       <button class='cu-btn icon-add bg-green shadow' ></button>
-      商业合作
+      
     </view>
   
     <view class="action text-gray" bindtap='switchTab' data-index="2" style="color:{{ selected === '2' ? selectedColor : color}}">
       <view class='icon-my'>
         <view class='cu-tag badge'></view>
       </view>
-      服务
+      摄影
     </view>
   </view>
   <upload-image showPost="{{showPost}}" bindclose="close"></upload-image>

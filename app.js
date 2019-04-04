@@ -37,6 +37,6 @@ App({
   globalData: {
     userInfo: null,
     activeIndex: '1',
-    host: 'http://www.4bbbb.cn'
+    host: 'https://www.4bbbb.cn'
   }
 })

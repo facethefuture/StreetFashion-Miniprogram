@@ -4,7 +4,9 @@
     "pages/logs/logs",
     "pages/me/me",
     "pages/index/streetSnapDetail/streetSnapDetail",
-    "pages/me/photographyDetail/photographyDetail"
+    "pages/me/photographyDetail/photographyDetail",
+    "pages/discovery/discovery",
+    "pages/production/production"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -25,6 +27,14 @@
       {
         "pagePath": "pages/me/me",
         "text": "组件"
+      },
+      {
+        "pagePath": "pages/discovery/discovery",
+        "text": "发现"
+      },
+      {
+        "pagePath": "pages/production/production",
+        "text": "作品"
       }
     ]
   },

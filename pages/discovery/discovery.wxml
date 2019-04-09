@@ -1,0 +1,7 @@
+<view class="container">
+  <view> 
+      <view wx:for="{{moduleList}}" wx:key="{{index}}" class="padding-xl radius shadow-blur bg-red margin-top bg-img" style="background-image:url({{host + item.coverImage}});">
+        <view class="module_name">{{item.name}}</view>
+      </view>
+  </view> 
+</view>

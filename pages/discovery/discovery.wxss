@@ -1,0 +1,17 @@
+.container>view{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+}
+.container>view>view{
+  width:45%;
+
+  height: 100px;
+
+}
+.container>view:nth-child(2n){
+  display: flex;
+  justify-content: flex-end;
+}

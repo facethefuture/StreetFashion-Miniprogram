@@ -35,18 +35,29 @@ Component({
       switch(data.index){
         case '0':
           wx.switchTab({
-            url: '/pages/index/index',
+            url: '/pages/index/index'
           })
           break
-        case '1': this.setData({
+        case '1':
+        console.log(111)
+          wx.switchTab({
+            url: "/pages/discovery/discovery"
+          })
+          break
+        case '2': this.setData({
           showPost: true
         })
           break
-        case '2':
+        case '3':
           wx.switchTab({
-            url: '/pages/me/me',
+            url: '/pages/me/me'
           })
           break
+        case '4':
+        console.log(4)
+          wx.switchTab({
+            url: '/pages/production/production'
+          })
       }
     }
   }

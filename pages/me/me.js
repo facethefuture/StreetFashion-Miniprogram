@@ -26,7 +26,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getPhotographyModules()
+  
     this.getList();
   
   },
@@ -45,7 +45,7 @@ Page({
     if (typeof this.getTabBar === 'function' &&
       this.getTabBar()) {
       this.getTabBar().setData({
-        selected: '2'
+        selected: '3'
       })
     }
   },
@@ -59,27 +59,7 @@ Page({
       showQrcodeModule: false
     })
   },
-  getPhotographyModules(){
-    wx.showLoading({
-      title: '加载中'
-    })
-    let _this = this
-    wx.request({
-      url: `${this.data.host}/queryPhotographyModule`,
-      method: 'GET',
-      success: function(res){
-        console.log(res)
-        _this.setData({
-          moduleList: res.data.dataList
-        })
-        wx.hideLoading()
-      },
-      fail:function(res){
-        console.log(res)
-        wx.hideLoading()
-      }
-    })
-  },
+
   onReachBottom() {
     console.log("触底了")
     if (this.data.currentPage < this.data.totalPage) {

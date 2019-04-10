@@ -1,4 +1,5 @@
 
+
 <view class="container">
   <view class="bg-video bg-mask">
     <video src="{{host + '/assets/video/4355551867231199_weibo.mp4'}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover"></video>

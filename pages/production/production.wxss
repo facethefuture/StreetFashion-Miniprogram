@@ -1,0 +1,16 @@
+/* pages/production/production.wxss */
+.bg-video, text-white{
+  height: 350px;
+  margin-bottom: 20px;
+}
+.container{
+  margin-bottom: 60px;
+}
+.text-white{
+  height:350px;
+display:flex;
+justify-content:center;
+align-items:center;
+  margin-bottom: 60px;
+   margin-bottom: 20px;
+}

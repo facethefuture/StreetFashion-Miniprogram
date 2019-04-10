@@ -89,6 +89,9 @@ Component({
             icon: 'success'
           })
           _this.hideModal()
+        },
+        fail(res){
+          console.log(res)
         }
       })
     }

@@ -2,19 +2,26 @@
 
 <view class="cu-bar tabbar bg-white">
     <view class="action text-gray" bindtap='switchTab' data-index="0" style="color:{{ selected === '0' ? selectedColor : color}}">
-      <view class='icon-homefill' ></view> 发现
+      <view class='icon-homefill' ></view> 首页
     </view>
-  
-    <view class="action text-gray add-action" bindtap='switchTab' data-index="1" style="selected:{{ activeIndex === '1' ? selectedColor : color}}">
+   <view class="action text-gray" bindtap='switchTab' data-index="1" style="color:{{ selected === '1' ? selectedColor : color}}">
+      <view class='icon-search' ></view> 发现
+    </view>
+    <view class="action text-gray add-action" bindtap='switchTab' data-index="2" style="selected:{{ activeIndex === '2' ? selectedColor : color}}">
       <button class='cu-btn icon-add bg-green shadow' ></button>
       
     </view>
   
-    <view class="action text-gray" bindtap='switchTab' data-index="2" style="color:{{ selected === '2' ? selectedColor : color}}">
-      <view class='icon-my'>
-        <view class='cu-tag badge'></view>
+    <view class="action text-gray" bindtap='switchTab' data-index="3" style="color:{{ selected === '3' ? selectedColor : color}}">
+      <view class='icon-camera'>
       </view>
       摄影
+    </view>
+     <view class="action text-gray" bindtap='switchTab' data-index="4" style="color:{{ selected === '4' ? selectedColor : color}}">
+      <view class='icon-record'>
+
+      </view>
+      街拍故事
     </view>
   </view>
   <upload-image showPost="{{showPost}}" bindclose="close"></upload-image>

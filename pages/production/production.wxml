@@ -1,0 +1,22 @@
+
+<view class="container">
+  <view class="bg-video bg-mask">
+    <video src="{{host + '/assets/video/4355551867231199_weibo.mp4'}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover"></video>
+    <cover-view class='padding-xl text-white'>
+      <cover-view class='padding-xs text-xl'>
+        街拍故事
+      </cover-view>
+   <cover-view class='padding-xs text-xl'>
+        Street Snap History
+      </cover-view>
+    </cover-view>
+  </view>
+  <view class="bg-video bg-mask">
+    <video src="{{host + '/assets/video/4357115936262541_weibo.mp4'}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover"></video>
+  
+  </view>
+  <view class="bg-video bg-mask">
+    <video src="{{host + '/assets/video/4357370777479292_weibo.mp4'}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover"></video>
+
+  </view>
+</view>
